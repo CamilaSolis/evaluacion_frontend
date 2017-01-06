@@ -1,0 +1,116 @@
+body{
+  background-image: url(../img/background.jpg);
+  background-position:center;
+  background-size:120%;
+  background-repeat:no-repeat;
+}
+.brand-logo img{
+  margin-top: 10px;
+  width:45%;
+}
+.icono {
+  color: $color-amarillo;
+  font-size: 40px;
+  margin-top: 10px;
+}
+nav{
+  background-color: $blanco;
+  box-shadow:none;
+}
+.backdrop{
+  background-color: $blanco;
+}
+.material-tooltip{
+    color: $tipografia-gris;
+}
+.cuadro{
+  margin-top: 30px;
+  background-color:$blanco;
+  width:100%;
+  padding: 5%;
+  select{
+    margin-bottom: 15px;
+  }
+  label{
+  font-size:20px;
+  color:$tipografia-gris;
+}
+}
+.cuadro2{
+  @extend .cuadro;
+  margin-top: 0px;
+  img{
+    width:50px;
+  }
+  .mensaje{
+    height:10px;
+  width:100%;
+  padding:0;
+  margin:0;
+  text-align:center;
+  }
+  input{
+  margin:0;
+  height:20px;
+  }
+}
+select{
+  border: 2px solid $color-amarillo;
+  height: 30px;
+}
+#footer{
+  width:100%;
+  background-color: $blanco;
+  font-size:12px;
+  height: 20px;
+  position: fixed;
+  color:$tipografia-gris;
+  bottom:0;
+  z-index: 500;
+}
+.btn{
+  background-color: $color-amarillo;
+  border-radius:none;
+  color:$blanco;
+  width:100%;
+  margin: 10px 0;
+  &:hover, &:focus{
+    background-color: $color-amarillo-hover;
+  }
+}
+.precio{
+  font-size: 17px;
+  color: $color-amarillo;
+}
+.minitexto{
+    font-size: 11px;
+    color:$tipografia-gris;
+}
+.texto{
+@extend .minitexto;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+
+[type=radio].with-gap:checked+label:after, 
+[type=radio].with-gap:checked+label:before, 
+[type=radio]:checked+label:after{
+  border: 2px solid $color-amarillo;
+  background-color: $color-amarillo;
+}
+.nodisplay{
+    display:none;
+  }
+
+  .sweet-alert button{
+    background-color:$color-amarillo;
+  }
+@media only screen and (max-width: 631px) {
+  body{
+  background-size:300%;
+}
+  .brand-logo img{
+  margin-top: 7px;
+  width:100%;
+}
+}

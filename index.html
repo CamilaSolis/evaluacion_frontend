@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Examen Herramientas Productividad</title>
+	<!--REQUIRED STYLE SHEETS-->
+	<link rel="stylesheet" type="text/css" href="node_modules/sweetalert/dist/sweetalert.css">
+	<link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="dist/css/style.min.css"> 
+</head>
+<body>
+	<header>
+		<div class="navbar-fixed">
+			<nav>
+				<div class="container nav-wrapper">
+					<a href="#" class="brand-logo"><img src="dist/img/logo-gris.jpg"></a>
+					<div class="right hide-on-med-and-down">
+						<a class="tooltipped fa fa-info-circle icono" data-position="bottom" data-delay="50" data-tooltip="La nueva forma de moverte en la ciudad. Con carrocomp! puedes compartir tu viaje con amigos y cobrar el costo equivalente."></a>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<section>   
+		<div class="container">
+			<div class="row">
+				<div class="col s12 m4 l4">
+					<div class="cuadro">
+						<label>ORIGEN</label>
+						<select id="ciudad1" class="browser-default">
+							<option value="" disabled selected>Seleccione</option>
+							<option value="arica">Arica</option>
+							<option value="iquique">Iquique</option>
+							<option value="antofagasta">Antofagasta</option>
+							<option value="calama">Calama</option>
+							<option value="la_serena">La Serena</option>
+							<option value="valparaiso">Valparaiso</option>
+							<option value="santiago">Santiago</option>
+							<option value="rancagua">Rancagua</option>
+							<option value="talca">Talca</option>
+							<option value="concepcion">Concepción</option>
+							<option value="temuco">Temuco</option>
+							<option value="valdivia">Valdivia</option>
+							<option value="puerto_montt">Puerto Montt</option>
+							<option value="coyhaique">Coyhaique</option>
+							<option value="punta_arenas">Punta Arenas</option>
+						</select>
+						<label>DESTINO</label>
+						<select id="ciudad2" class="browser-default">
+							<option value="" disabled selected>Seleccione</option>
+							<option value="arica">Arica</option>
+							<option value="iquique">Iquique</option>
+							<option value="antofagasta">Antofagasta</option>
+							<option value="calama">Calama</option>
+							<option value="la_serena">La Serena</option>
+							<option value="valparaiso">Valparaiso</option>
+							<option value="santiago">Santiago</option>
+							<option value="rancagua">Rancagua</option>
+							<option value="talca">Talca</option>
+							<option value="concepcion">Concepción</option>
+							<option value="temuco">Temuco</option>
+							<option value="valdivia">Valdivia</option>
+							<option value="puerto_montt">Puerto Montt</option>
+							<option value="coyhaique">Coyhaique</option>
+							<option value="punta_arenas">Punta Arenas</option>
+						</select>
+					</div>
+					<button class="waves-effect waves-light btn" id=boton1>BUSCAR</button>
+					<div class="nodisplay">
+						<div class="cuadro2">
+							<label>VEHÍCULO</label>
+							<div class="texto">SELECCIONE</div>
+							<div id="product1">
+								<div class="row">
+									<div class="col m4">
+										<input value="motocicleta" class="with-gap" name="group1" type="radio" id="test1"  />
+										<label for="test1">
+											<img src="dist/img/moto.jpg"></label>
+										</div>
+										<div class="col m5">
+											<b>Motocicleta</b>
+											<div class="minitexto">máximo 2 pasajeros</div>
+										</div>
+										<div class="col m3 precio">
+											<p id=precio1></p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col m4">
+											<input value="automovil" class="with-gap" name="group1" type="radio" id="test2"  />
+											<label for="test2">
+												<img src="dist/img/auto.jpg"></label>
+											</div>
+											<div class="col m5">
+												<b>Automóvil</b>
+												<div class="minitexto">máximo 5 pasajeros</div>
+											</div>
+											<div class="col m3 precio">
+												<p id=precio2></p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col m4">
+												<input value="minivan" class="with-gap" name="group1" type="radio" id="test3"  />
+												<label for="test3">
+													<img src="dist/img/van.jpg"></label>
+												</div>
+												<div class="col m5">
+													<b>Minivan</b>
+													<div class="minitexto">máximo 10 pasajeros</div>
+												</div>
+												<div class="col m3 precio">
+													<p id=precio3></p>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col m4">
+													<input value="camion" class="with-gap" name="group1" type="radio" id="test4"  />
+													<label for="test4">
+														<img src="dist/img/camion.jpg"></label>
+													</div>
+													<div class="col m5">
+														<b>Camión</b>
+														<div class="minitexto">máximo 3 pasajeros</div>
+													</div>
+													<div class="col m3 precio">
+														<p id=precio4></p>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col m9">
+														<label><b>Cantidad pasajeros:</b></label>
+													</div>
+													<div class="col m3">
+														<input id="caja" type="number" value="1" min="1" max="6">
+													</div>
+												</div>
+												<div class="mensaje" style="display:none">Solo numeros del 1-6</div>
+											</div>
+										</div>
+										<button class="waves-effect waves-light btn" id="boton">COMPARTIR CARRO!</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section> 
+					<div id="footer">
+						<div class="container">
+							2017 www.yourdomain.com | All Right Reserved  
+						</div>
+					</div><!-- END FOOTER SECTION -->
+					<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+					<script type="text/javascript" src="dist/js/script.min.js"></script>
+					<script type="text/javascript" src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+					<script type="text/javascript" src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
+				</body>
+				</html>
