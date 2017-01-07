@@ -1,9 +1,11 @@
-body{
-  background-image: url(../img/background.jpg);
-  background-position:center;
-  background-size:120%;
-  background-repeat:no-repeat;
+html, body{
+        height: 100%;
+        margin: 0;
+        padding: 0;
 }
+#map {
+        height: 100%;
+      }
 .brand-logo img{
   margin-top: 10px;
   width:45%;
@@ -16,6 +18,7 @@ body{
 nav{
   background-color: $blanco;
   box-shadow:none;
+  z-index: 5;
 }
 .backdrop{
   background-color: $blanco;
@@ -66,7 +69,7 @@ select{
   position: fixed;
   color:$tipografia-gris;
   bottom:0;
-  z-index: 500;
+  z-index: 5;
 }
 .btn{
   background-color: $color-amarillo;
@@ -101,6 +104,10 @@ select{
 .nodisplay{
     display:none;
   }
+  .sobremap{
+    z-index: 5;
+    position:absolute;
+  }
 
   .sweet-alert button{
     background-color:$color-amarillo;
@@ -112,5 +119,8 @@ select{
   .brand-logo img{
   margin-top: 7px;
   width:100%;
+}
+.sobremap{
+  bottom:0px;
 }
 }

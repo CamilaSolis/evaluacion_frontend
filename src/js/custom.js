@@ -54,7 +54,7 @@ $("#boton1").click(function validateForm(){
             $("#precio3").text("$"+transPre[2].toFixed());
             $("#precio4").text("$"+transPre[3].toFixed());
 
-
+			$("#map").css("height","130%");
 
 			return;
 
@@ -65,6 +65,17 @@ $("#boton1").click(function validateForm(){
 //botones
 $(document).ready(function(){
 	$( "#boton" ).click(function() {
+		var input = document.getElementById("caja");
+		var vehiculos = get_carros();
+
+
+		 for (var i = 0; vehiculos.length > i;i++)
+    {
+
+    	if($('input:radio[name=group1]:checked').val() == vehiculos[i].name){
+			var maxnum = vehiculos[i].pasajeros;        	//$('#select-table > .roomNumber').attr('enabled',false);
+    	}
+	}
 		var movil = $( "input:radio[name=group1]:checked" ).val();
 		var vehiculos = get_carros();
 		var personas = $("#caja").val();
@@ -73,9 +84,20 @@ $(document).ready(function(){
 
 			swal("Error", "Por favor seleccione un vehiculo", "error");
 
+
+
 		}
 
 		else{
+				if(personas> maxnum )
+			{
+				var maxim = maxnum.toString();
+				var num = "Por favor seleccione un maximo de " + maxim; 
+				swal("Error", num + " personas." , "error");
+
+			}
+
+			else{
 
 			if(movil == "automovil")
 		{
@@ -121,7 +143,7 @@ $(document).ready(function(){
 			var foto = "dist/img/camion.jpg";
 		}
 
-			
+			}
 		}
 
 
@@ -188,45 +210,53 @@ function persona (precio, cantidad_personas)
 
 }
 
-$( "input" ).on( "click", function() {
-	var movil = $( "input:radio[name=group1]:checked" ).val();
-	var cantidad = get_carros()
-
-	for(var i = 0 ; cantidad.length();i++)
-	{
-		if(cantidad[i].name == movil)
-		{
-
-			var max = cantidad[i].pasajeros;
-
-			$('input').focus(function (max) {
-   			 
-				var maxi=max;
-   			 var $this = $(this)
-    
-  			  t = setInterval(
-
-   		 function (maxi) {
-       	 if (($this.val() < 1 || $this.val() > maxi) && $this.val().length != 0) {
-            if ($this.val() < 1) {
-                $this.val(1)
-            }
-
-            if ($this.val() > maxi) {
-                $this.val(maxi)
-            }
-            $('.mensaje').fadeIn(2000, function () {
-                $(this).fadeOut(2000)
-            })
-       	 }
-    	}, 50)
-	})
-}}});
+$("#product1 input[name='group1']").click(function(){
 
 
-
-	
-
-
+var vehiculo = get_carros();
+var input = document.getElementById("caja");
 
 
+    for (var i = 0; vehiculo.length > i;i++)
+    {
+
+    	if($('input:radio[name=group1]:checked').val() == vehiculo[i].name){
+        	input.setAttribute("max",vehiculo[i].pasajeros);
+        	//$('#select-table > .roomNumber').attr('enabled',false);
+    	}
+	}
+
+});
+
+//mapa
+
+function initMap() {
+  var directionsService = new google.maps.DirectionsService;
+  var directionsDisplay = new google.maps.DirectionsRenderer;
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 9,
+	center: {lat: -33.437384, lng: -70.650473}
+  });
+  directionsDisplay.setMap(map);
+
+  var onChangeHandler = function() {
+    calculateAndDisplayRoute(directionsService, directionsDisplay);
+  };
+  document.getElementById('ciudad1').addEventListener('change', onChangeHandler);
+  document.getElementById('ciudad2').addEventListener('change', onChangeHandler);
+}
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  directionsService.route({
+    origin: document.getElementById('ciudad1').value,
+    destination: document.getElementById('ciudad2').value,
+    travelMode: google.maps.TravelMode.DRIVING
+  }, function(response, status) {
+    if (status === google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    } else {
+    }
+  });
+}
+
+//tamaño mapa

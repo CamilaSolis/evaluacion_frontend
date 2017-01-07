@@ -6,7 +6,7 @@ function get_carros(){
             kml:21
         },
         {
-            name: "auto",
+            name: "automovil",
             pasajeros: 5,
             kml:12
         },

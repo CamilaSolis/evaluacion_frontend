@@ -6355,11 +6355,13 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 @media (min-height: 40.125em) {
   .picker--time .picker__box {
     margin-bottom: 5em; } }
-body {
-  background-image: url(../img/background.jpg);
-  background-position: center;
-  background-size: 120%;
-  background-repeat: no-repeat; }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+#map {
+  height: 100%; }
 
 .brand-logo img {
   margin-top: 10px;
@@ -6372,7 +6374,8 @@ body {
 
 nav {
   background-color: #ffffff;
-  box-shadow: none; }
+  box-shadow: none;
+  z-index: 5; }
 
 .backdrop {
   background-color: #ffffff; }
@@ -6417,7 +6420,7 @@ select {
   position: fixed;
   color: #555555;
   bottom: 0;
-  z-index: 500; }
+  z-index: 5; }
 
 .btn, .btn-large {
   background-color: #fdc473;
@@ -6449,6 +6452,10 @@ select {
 .nodisplay {
   display: none; }
 
+.sobremap {
+  z-index: 5;
+  position: absolute; }
+
 .sweet-alert button {
   background-color: #fdc473; }
 
@@ -6458,6 +6465,9 @@ select {
 
   .brand-logo img {
     margin-top: 7px;
-    width: 100%; } }
+    width: 100%; }
+
+  .sobremap {
+    bottom: 0px; } }
 
 /*# sourceMappingURL=main.css.map */

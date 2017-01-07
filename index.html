@@ -25,45 +25,45 @@
 	<section>   
 		<div class="container">
 			<div class="row">
-				<div class="col s12 m4 l4">
+				<div class="sobremap col s12 m4 l4">
 					<div class="cuadro">
 						<label>ORIGEN</label>
 						<select id="ciudad1" class="browser-default">
 							<option value="" disabled selected>Seleccione</option>
-							<option value="arica">Arica</option>
-							<option value="iquique">Iquique</option>
-							<option value="antofagasta">Antofagasta</option>
-							<option value="calama">Calama</option>
-							<option value="la_serena">La Serena</option>
-							<option value="valparaiso">Valparaiso</option>
-							<option value="santiago">Santiago</option>
-							<option value="rancagua">Rancagua</option>
-							<option value="talca">Talca</option>
-							<option value="concepcion">Concepción</option>
-							<option value="temuco">Temuco</option>
-							<option value="valdivia">Valdivia</option>
-							<option value="puerto_montt">Puerto Montt</option>
-							<option value="coyhaique">Coyhaique</option>
-							<option value="punta_arenas">Punta Arenas</option>
+			<option value="arica, cl">Arica</option>
+			<option value="iquique, cl">Iquique</option>
+			<option value="antofagasta, cl">Antofagasta</option>
+			<option value="calama, cl">Calama</option>
+			<option value="la serena, cl">La Serena</option>
+			<option value="valparaiso, cl">Valparaiso</option>
+			<option value="santiago, cl">Santiago</option>
+			<option value="rancagua, cl">Rancagua</option>
+			<option value="talca, cl">Talca</option>
+			<option value="concepcion, cl">Concepción</option>
+			<option value="temuco, cl">Temuco</option>
+			<option value="valdivia, cl">Valdivia</option>
+			<option value="puerto montt, cl">Puerto Montt</option>
+			<option value="coyhaique, cl">Coyhaique</option>
+			<option value="punta arenas, cl">Punta Arenas</option>
 						</select>
 						<label>DESTINO</label>
 						<select id="ciudad2" class="browser-default">
 							<option value="" disabled selected>Seleccione</option>
-							<option value="arica">Arica</option>
-							<option value="iquique">Iquique</option>
-							<option value="antofagasta">Antofagasta</option>
-							<option value="calama">Calama</option>
-							<option value="la_serena">La Serena</option>
-							<option value="valparaiso">Valparaiso</option>
-							<option value="santiago">Santiago</option>
-							<option value="rancagua">Rancagua</option>
-							<option value="talca">Talca</option>
-							<option value="concepcion">Concepción</option>
-							<option value="temuco">Temuco</option>
-							<option value="valdivia">Valdivia</option>
-							<option value="puerto_montt">Puerto Montt</option>
-							<option value="coyhaique">Coyhaique</option>
-							<option value="punta_arenas">Punta Arenas</option>
+			<option value="arica, cl">Arica</option>
+			<option value="iquique, cl">Iquique</option>
+			<option value="antofagasta, cl">Antofagasta</option>
+			<option value="calama, cl">Calama</option>
+			<option value="la serena, cl">La Serena</option>
+			<option value="valparaiso, cl">Valparaiso</option>
+			<option value="santiago, cl">Santiago</option>
+			<option value="rancagua, cl">Rancagua</option>
+			<option value="talca, cl">Talca</option>
+			<option value="concepcion, cl">Concepción</option>
+			<option value="temuco, cl">Temuco</option>
+			<option value="valdivia, cl">Valdivia</option>
+			<option value="puerto montt, cl">Puerto Montt</option>
+			<option value="coyhaique, cl">Coyhaique</option>
+			<option value="punta arenas, cl">Punta Arenas</option>
 						</select>
 					</div>
 					<button class="waves-effect waves-light btn" id=boton1>BUSCAR</button>
@@ -108,7 +108,7 @@
 												</div>
 												<div class="col m5">
 													<b>Minivan</b>
-													<div class="minitexto">máximo 10 pasajeros</div>
+													<div class="minitexto">máximo 8 pasajeros</div>
 												</div>
 												<div class="col m3 precio">
 													<p id=precio3></p>
@@ -133,7 +133,7 @@
 														<label><b>Cantidad pasajeros:</b></label>
 													</div>
 													<div class="col m3">
-														<input id="caja" type="number" value="1" min="1" max="6">
+														<input id="caja" type="number" value="1" min="1" max="10">
 													</div>
 												</div>
 												<div class="mensaje" style="display:none">Solo numeros del 1-6</div>
@@ -150,6 +150,9 @@
 							2017 www.yourdomain.com | All Right Reserved  
 						</div>
 					</div><!-- END FOOTER SECTION -->
+					<div id="map"></div>
+					<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7ixZDO0FvnkqnSU0YBBKEiXx8VyEKubQ&callback=initMap"
+        async defer></script>
 					<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
 					<script type="text/javascript" src="dist/js/script.min.js"></script>
 					<script type="text/javascript" src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
